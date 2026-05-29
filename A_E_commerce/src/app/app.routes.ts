@@ -11,10 +11,13 @@ import { Food } from './pages/food/food';
 import { Sports } from './pages/sports/sports';
 import { Books } from './pages/books/books';
 import { Cart } from './pages/cart/cart';
+import { ForYou } from './pages/for-you/for-you';
 
 export const routes: Routes = [
 
-  { path: '', component: Home },
+  {path:'',component:ForYou},
+
+  { path: 'home', component: Home },
 
   { path: 'fashion', component: Fashion },
 
