@@ -16,18 +16,21 @@
         <a routerLink="/cart" class="cart-link">
             <span class="material-icons icon">shopping_cart</span>
             <span>Cart</span>
-            <span class="cart-count">0</span>
+            <span class="cart-count">{{ getCartCount() }}</span>
         </a>
+
     </div>
+
 </div>
 
 <div class="category-menu">
+
     <a routerLink="/">For You</a>
     <a routerLink="/fashion">Fashion</a>
     <a routerLink="/mobiles">Mobiles</a>
     <a routerLink="/beauty">Beauty</a>
     <a routerLink="/electronics">Electronics</a>
-    <a routerLink="/home-appliances">Home</a>
+    <a routerLink="/home-appliances">Home-Appliances</a>
     <a routerLink="/toys">Toys</a>
     <a routerLink="/food">Food</a>
     <a routerLink="/sports">Sports</a>

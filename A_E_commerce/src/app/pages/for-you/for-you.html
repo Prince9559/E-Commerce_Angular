@@ -1,1 +1,21 @@
-<p>for-you works!</p>
+<div class="slider-container">
+
+  <h2 class="title">Prince, still looking for these?</h2>
+
+  <button class="arrow left" (click)="scrollLeft()">&#10094;</button>
+
+  <div class="slider" #slider>
+
+    <div class="card" *ngFor="let item of products">
+
+      <img [src]="item.image" />
+
+      <p class="name">{{ item.name }}</p>
+
+    </div>
+
+  </div>
+
+  <button class="arrow right" (click)="scrollRight()">&#10095;</button>
+
+</div>

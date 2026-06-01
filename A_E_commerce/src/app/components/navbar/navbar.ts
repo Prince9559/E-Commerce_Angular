@@ -10,4 +10,9 @@ import { RouterLink } from '@angular/router';
 })
 export class Navbar {
 
+  getCartCount(): number {
+    const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+    return cart.length;
+  }
+
 }
