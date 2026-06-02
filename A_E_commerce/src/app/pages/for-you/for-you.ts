@@ -6,14 +6,14 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './for-you.html',
-  styleUrl: './for-you.css',
+  styleUrl: './for-you.css'
 })
 export class ForYou implements OnInit {
 
   products: any[] = [];
+  showProducts: any[] = [];
 
   @ViewChild('slider') slider!: ElementRef;
-
   constructor(private cdr: ChangeDetectorRef) {}
 
   ngOnInit(): void {
@@ -22,6 +22,14 @@ export class ForYou implements OnInit {
       .then(response => response.json())
       .then(data => {
         this.products = data;
+        this.cdr.detectChanges();
+      })
+      .catch(error => console.log(error));
+
+    fetch('https://prince9559.github.io/jsonproject/show.json')
+      .then(response => response.json())
+      .then(data => {
+        this.showProducts = data;
         this.cdr.detectChanges();
       })
       .catch(error => console.log(error));

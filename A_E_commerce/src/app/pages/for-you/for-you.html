@@ -76,10 +76,7 @@
 
 </div>
 
-
 <div class="slider-container">
-
-
   <h2 class="title">Prince, still looking for these?</h2>
 
   <button class="arrow left" (click)="scrollLeft()">
@@ -88,10 +85,10 @@
 
   <div class="slider" #slider>
 
-<div class="slider-card" *ngFor="let item of products">
-    <img [src]="item.image">
-    <p class="slider-name">{{item.name}}</p>
-</div>
+    <div class="slider-card" *ngFor="let item of products">
+      <img [src]="item.image" [alt]="item.name">
+      <p class="slider-name">{{ item.name }}</p>
+    </div>
 
   </div>
 
@@ -99,4 +96,26 @@
     &#10095;
   </button>
 
+</div>
+
+<div class="top-selection">
+  <h2>Top Selection</h2>
+
+  <div class="selection-wrapper">
+
+    <div class="selection-card" *ngFor="let item of showProducts">
+      <img [src]="item.image" [alt]="item.name">
+
+      <div class="card-content">
+        <p>{{ item.name }}</p>
+        <b>{{ item.description }}</b>
+        <h4>{{ item.tag }}</h4>
+      </div>
+    </div>
+
+  </div>
+
+  <button class="arrow-btn">
+  ➜
+  </button>
 </div>
