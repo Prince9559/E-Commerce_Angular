@@ -1,21 +1,102 @@
-<div class="slider-container">
+<div id="homeCarousel"
+     class="carousel slide carousel-fade"
+     data-bs-ride="carousel"
+     data-bs-interval="2000">
 
-  <h2 class="title">Prince, still looking for these?</h2>
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="0" class="active"></button>
+    <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="1"></button>
+    <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="2"></button>
+    <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="3"></button>
+    <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="4"></button>
+    <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="5"></button>
+    <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="6"></button>
+    <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="7"></button>
+    <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="8"></button>
+    <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="9"></button>
+    <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="10"></button>
+  </div>
 
-  <button class="arrow left" (click)="scrollLeft()">&#10094;</button>
+  <div class="carousel-inner">
 
-  <div class="slider" #slider>
+    <div class="carousel-item">
+      <img src="assets/banner8.jpg" class="d-block w-100" alt="Banner 2">
+    </div>
 
-    <div class="card" *ngFor="let item of products">
+    <div class="carousel-item">
+      <img src="assets/banner9.jpg" class="d-block w-100" alt="Banner 3">
+    </div>
 
-      <img [src]="item.image" />
+    <div class="carousel-item">
+      <img src="assets/banner10.jpg" class="d-block w-100" alt="Banner 3">
+    </div>
 
-      <p class="name">{{ item.name }}</p>
+    <div class="carousel-item">
+      <img src="assets/banner2.jpg" class="d-block w-100" alt="Banner 3">
+    </div>
 
+    <div class="carousel-item">
+      <img src="assets/banner3.jpg" class="d-block w-100" alt="Banner 3">
+    </div>
+
+    <div class="carousel-item active">
+      <img src="assets/banner7.jpg" class="d-block w-100" alt="Banner 1">
+    </div>
+
+
+      <div class="carousel-item">
+      <img src="assets/banner1.jpg" class="d-block w-100" alt="Banner 3">
+    </div>
+
+    <div class="carousel-item">
+      <img src="assets/banner4.jpg" class="d-block w-100" alt="Banner 3">
+    </div>
+
+    <div class="carousel-item">
+      <img src="assets/banner5.jpg" class="d-block w-100" alt="Banner 3">
+    </div>
+
+    <div class="carousel-item">
+      <img src="assets/banner6.jpg" class="d-block w-100" alt="Banner 3">
     </div>
 
   </div>
 
-  <button class="arrow right" (click)="scrollRight()">&#10095;</button>
+  <button class="carousel-control-prev" type="button"
+          data-bs-target="#homeCarousel"
+          data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+
+  <button class="carousel-control-next" type="button"
+          data-bs-target="#homeCarousel"
+          data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+
+</div>
+
+
+<div class="slider-container">
+
+
+  <h2 class="title">Prince, still looking for these?</h2>
+
+  <button class="arrow left" (click)="scrollLeft()">
+    &#10094;
+  </button>
+
+  <div class="slider" #slider>
+
+<div class="slider-card" *ngFor="let item of products">
+    <img [src]="item.image">
+    <p class="slider-name">{{item.name}}</p>
+</div>
+
+  </div>
+
+  <button class="arrow right" (click)="scrollRight()">
+    &#10095;
+  </button>
 
 </div>

@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import {Component,OnInit,ViewChild,ElementRef,ChangeDetectorRef} from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -12,24 +12,31 @@ export class ForYou implements OnInit {
 
   products: any[] = [];
 
-  @ViewChild('slider', { static: false }) slider!: ElementRef;
+  @ViewChild('slider') slider!: ElementRef;
+
+  constructor(private cdr: ChangeDetectorRef) {}
 
   ngOnInit(): void {
+
     fetch('https://prince9559.github.io/jsonproject/You.json')
-      .then(res => res.json())
-      .then(data => this.products = data);
+      .then(response => response.json())
+      .then(data => {
+        this.products = data;
+        this.cdr.detectChanges();
+      })
+      .catch(error => console.log(error));
   }
 
   scrollLeft() {
     this.slider.nativeElement.scrollBy({
-      left: -300,
+      left: -800,
       behavior: 'smooth'
     });
   }
 
   scrollRight() {
     this.slider.nativeElement.scrollBy({
-      left: 300,
+      left: 800,
       behavior: 'smooth'
     });
   }
