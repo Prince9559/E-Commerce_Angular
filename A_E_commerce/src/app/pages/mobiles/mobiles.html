@@ -1,28 +1,37 @@
-<div class="login-container">
-  <div class="left-section">
-    <div class="logo-box">
-      <img src="pic/on.jpg" alt="Logo" />
-      <h1>Shopping Store</h1>
-    </div>
-  </div>
+<h2 style="text-align:center; margin:20px 0;">
+   Mobile Categories
+</h2>
 
-  <div class="right-section">
-    <div class="form-box">
-      <h2>LOGIN</h2>
-      
-      <div class="input-box">
-      <input type="text" placeholder="Email / Username" required/>
-      </div>
+<div class="mobile-container">
 
-      <div class="input-box">
-      <input type="password" placeholder="Password" required/>
-      </div>
+  <div class="mobile-card" *ngFor="let item of products">
 
-      <button>LOGIN →</button>
-
-      <p class="powered">Powered By:</p>
-      <img src="pic/super.jpg" class="small-logo" />
+    <div class="mobile-img-box">
+      <img [src]="item.image" [alt]="item.name">
     </div>
 
+    <div class="mobile-content">
+
+      <h3>{{ item.name }}</h3>
+
+      <p class="mobile-desc">
+        {{ item.description }}
+      </p>
+
+      <div class="mobile-price-section">
+
+        <span class="mobile-new-price">
+          ₹{{ item.new_price }}
+        </span>
+
+        <span class="mobile-old-price">
+          ₹{{ item.old_price }}
+        </span>
+
+      </div>
+
+    </div>
+
   </div>
+
 </div>

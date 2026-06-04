@@ -1,1 +1,37 @@
-<p>home-appliances works!</p>
+<h2 style="text-align:center; margin:20px 0;">
+   HomeAppliances Categories
+</h2>
+
+<div class="homeAppliances-container">
+
+  <div class="homeAppliances-card" *ngFor="let item of products">
+
+    <div class="homeAppliances-img-box">
+      <img [src]="item.image" [alt]="item.name">
+    </div>
+
+    <div class="homeAppliances-content">
+
+      <h3>{{ item.name }}</h3>
+
+      <p class="homeAppliances-desc">
+        {{ item.description }}
+      </p>
+
+      <div class="homeAppliances-price-section">
+
+        <span class="homeAppliances-new-price">
+          ₹{{ item.new_price }}
+        </span>
+
+        <span class="homeAppliances-old-price">
+          ₹{{ item.old_price }}
+        </span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

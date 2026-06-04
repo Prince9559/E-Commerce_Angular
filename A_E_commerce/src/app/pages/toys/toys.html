@@ -1,1 +1,37 @@
-<p>toys works!</p>
+<h2 style="text-align:center; margin:20px 0;">
+   Toys Categories
+</h2>
+
+<div class="toys-container">
+
+  <div class="toys-card" *ngFor="let item of products">
+
+    <div class="toys-img-box">
+      <img [src]="item.image" [alt]="item.name">
+    </div>
+
+    <div class="toys-content">
+
+      <h3>{{ item.name }}</h3>
+
+      <p class="toys-desc">
+        {{ item.description }}
+      </p>
+
+      <div class="toys-price-section">
+
+        <span class="toys-new-price">
+          ₹{{ item.new_price }}
+        </span>
+
+        <span class="toys-old-price">
+          ₹{{ item.old_price }}
+        </span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

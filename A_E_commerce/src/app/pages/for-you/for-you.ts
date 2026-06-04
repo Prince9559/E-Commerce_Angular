@@ -12,6 +12,7 @@ export class ForYou implements OnInit {
 
   products: any[] = [];
   showProducts: any[] = [];
+  all_item:any[]=[];
 
   @ViewChild('slider') slider!: ElementRef;
   constructor(private cdr: ChangeDetectorRef) {}
@@ -30,6 +31,15 @@ export class ForYou implements OnInit {
       .then(response => response.json())
       .then(data => {
         this.showProducts = data;
+        this.cdr.detectChanges();
+      })
+      .catch(error => console.log(error));
+
+      
+    fetch('https://prince9559.github.io/jsonproject/All_item.json')
+      .then(response => response.json())
+      .then(data => {
+        this.all_item = data;
         this.cdr.detectChanges();
       })
       .catch(error => console.log(error));

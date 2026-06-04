@@ -1,1 +1,37 @@
-<p>electronics works!</p>
+<h2 style="text-align:center; margin:20px 0;">
+   Electronics Categories
+</h2>
+
+<div class="electronics-container">
+
+  <div class="electronics-card" *ngFor="let item of products">
+
+    <div class="electronics-img-box">
+      <img [src]="item.image" [alt]="item.name">
+    </div>
+
+    <div class="electronics-content">
+
+      <h3>{{ item.name }}</h3>
+
+      <p class="electronics-desc">
+        {{ item.description }}
+      </p>
+
+      <div class="electronics-price-section">
+
+        <span class="electronics-new-price">
+          ₹{{ item.new_price }}
+        </span>
+
+        <span class="electronics-old-price">
+          ₹{{ item.old_price }}
+        </span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

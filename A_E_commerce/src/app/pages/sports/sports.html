@@ -1,1 +1,37 @@
-<p>sports works!</p>
+<h2 style="text-align:center; margin:20px 0;">
+   Sports Categories
+</h2>
+
+<div class="sport-container">
+
+  <div class="sport-card" *ngFor="let item of products">
+
+    <div class="sport-img-box">
+      <img [src]="item.image" [alt]="item.name">
+    </div>
+
+    <div class="sport-content">
+
+      <h3>{{ item.name }}</h3>
+
+      <p class="sport-desc">
+        {{ item.description }}
+      </p>
+
+      <div class="sport-price-section">
+
+        <span class="sport-new-price">
+          ₹{{ item.new_price }}
+        </span>
+
+        <span class="sport-old-price">
+          ₹{{ item.old_price }}
+        </span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

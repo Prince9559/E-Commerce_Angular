@@ -1,9 +1,37 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-mobiles',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './mobiles.html',
-  styleUrl: './mobiles.css',
+  styleUrls: ['./mobiles.css']
 })
-export class Mobiles {}
+export class Mobiles implements OnInit {
+
+  products: any[] = [];
+
+  constructor(private cdr: ChangeDetectorRef) {}
+
+  ngOnInit(): void {
+
+    fetch('https://prince9559.github.io/jsonproject/Mobiles.json')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`HTTP Error: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then(data => {
+        this.products = data;
+        this.cdr.detectChanges();
+
+        console.log('Mobiles Loaded:', this.products);
+      })
+      .catch(error => {
+        console.error('Error Loading Mobiles:', error);
+      });
+
+  }
+}

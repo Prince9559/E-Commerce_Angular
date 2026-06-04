@@ -1,224 +1,91 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: sans-serif;
+.mobile-container{
+    width:95%;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
 }
 
-body {
-  background: #dfe5e7;
+.mobile-card{
+    background:#fff;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 4px 15px rgba(0,0,0,0.1);
+    transition:0.3s ease;
 }
 
-.login-container {
-  width: 90%;
-  max-width: 1200px;
-  min-height: 500px;
-  margin: 40px auto;
-  display: flex;
-  border-radius: 30px;
-  overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+.mobile-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 8px 25px rgba(0,0,0,0.15);
 }
 
-.left-section {
-  width: 50%;
-  background: #e3e8e8;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.mobile-img-box{
+    width:100%;
+    height:250px;
+    overflow:hidden;
 }
 
-.logo-box {
-  text-align: center;
+.mobile-img-box img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+    transition:0.4s;
 }
 
-.logo-box img {
-  width: 130px;
-  margin-bottom: 20px;
+.mobile-card:hover .mobile-img-box img{
+    transform:scale(1.05);
 }
 
-.logo-box h1 {
-  color: #233b8f;
-  font-size: 42px;
-  font-weight: 500;
+.mobile-content{
+    padding:15px;
 }
 
-.right-section {
-  width: 50%;
-  background: #233b8f;
-  clip-path: polygon(18% 0, 100% 0, 100% 100%, 0 100%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 30px;
+.mobile-content h3{
+    font-size:20px;
+    margin-bottom:10px;
+    color:#222;
 }
 
-
-.form-box {
-  width: 70%;
-  text-align: center;
-  color: white;
+.mobile-desc{
+    font-size:14px;
+    color:#666;
+    line-height:1.5;
+    min-height:60px;
 }
 
-.form-box h2 {
-  margin-bottom: 40px;
-  font-size: 32px;
+.mobile-price-section{
+    margin-top:15px;
+    display:flex;
+    align-items:center;
+    gap:10px;
 }
 
-.input-box {
-  background: white;
-  border-radius: 40px;
-  margin-bottom: 25px;
-  padding: 15px 20px;
-  display: flex;
-  align-items: center;
+.mobile-new-price{
+    color:#e63946;
+    font-size:22px;
+    font-weight:700;
 }
 
-.input-box i {
-  color: #222;
-  margin-right: 10px;
-  font-size: 18px;
+.mobile-old-price{
+    color:#888;
+    text-decoration:line-through;
 }
 
-.input-box input {
-  border: none;
-  outline: none;
-  width: 100%;
-  font-size: 16px;
-  background: transparent;
+@media (max-width:992px){
+    .mobile-container{
+        grid-template-columns:repeat(3,1fr);
+    }
 }
 
-button {
-  margin-top: 10px;
-  padding: 14px 40px;
-  border-radius: 40px;
-  border: 2px solid #555;
-  background: #111;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
-  transition: 0.3s;
+@media (max-width:768px){
+    .mobile-container{
+        grid-template-columns:repeat(2,1fr);
+    }
 }
 
-button:hover {
-  background: #000;
-}
-
-.powered {
-  margin-top: 60px;
-  font-size: 18px;
-}
-
-.small-logo {
-  width: 120px;
-  margin-top: 10px;
-}
-@media (max-width: 768px) {
-  .login-container {
-    flex-direction: column;
-    width: 95%;
-    min-height: auto;
-    margin: 20px auto;
-    border-radius: 20px;
-  }
-
-  .left-section,
-  .right-section {
-    width: 100%;
-  }
-
-  .left-section {
-    padding: 30px 20px;
-  }
-
-  .right-section {
-    clip-path: none;
-    padding: 30px 20px;
-  }
-
-  .logo-box img {
-    width: 100px;
-  }
-
-  .logo-box h1 {
-    font-size: 30px;
-  }
-
-  .form-box {
-    width: 100%;
-  }
-
-  .form-box h2 {
-    font-size: 28px;
-    margin-bottom: 25px;
-  }
-
-  .input-box {
-    padding: 12px 15px;
-    margin-bottom: 18px;
-  }
-
-  .input-box input {
-    font-size: 14px;
-  }
-
-  button {
-    width: 100%;
-  }
-
-  .powered {
-    margin-top: 30px;
-    font-size: 16px;
-  }
-
-  .small-logo {
-    width: 90px;
-  }
-}
-
-@media (max-width: 480px) {
-
-  .login-container {
-    width: 98%;
-    margin: 10px auto;
-  }
-
-  .logo-box img {
-    width: 80px;
-  }
-
-  .logo-box h1 {
-    font-size: 24px;
-  }
-
-  .form-box h2 {
-    font-size: 24px;
-  }
-
-  .input-box {
-    border-radius: 25px;
-    padding: 12px;
-  }
-
-  .input-box i {
-    font-size: 16px;
-  }
-
-  .input-box input {
-    font-size: 14px;
-  }
-
-  button {
-    padding: 12px;
-    border-radius: 25px;
-    font-size: 15px;
-  }
-
-  .powered {
-    font-size: 14px;
-  }
-
-  .small-logo {
-    width: 80px;
-  }
+@media (max-width:500px){
+    .mobile-container{
+        grid-template-columns:1fr;
+    }
 }
