@@ -1,10 +1,11 @@
 import {Component,OnInit,ViewChild,ElementRef,ChangeDetectorRef} from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-for-you',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,RouterLink],
   templateUrl: './for-you.html',
   styleUrl: './for-you.css'
 })

@@ -1,0 +1,56 @@
+<div *ngIf="product; else loading">
+
+  <div class="product-wrapper">
+
+    <div class="thumbnail-section">
+
+      <img [src]="product.image" class="thumb-img" (click)="changeImage(product.image)">
+
+      <img [src]="product.image"class="thumb-img"(click)="changeImage(product.image)">
+
+      <img [src]="product.image"class="thumb-img"(click)="changeImage(product.image)">
+
+      <img [src]="product.image"class="thumb-img"(click)="changeImage(product.image)">
+
+    </div>
+
+    <div class="main-image-section">
+
+      <img [src]="selectedImage" [alt]="product.name" class="main-image"(mousemove)="zoomImage($event)"(mouseleave)="hideZoom()">
+
+      <div *ngIf="showZoom" class="zoom-lens" [style.left.px]="lensX"[style.top.px]="lensY">
+      </div>
+
+    </div>
+
+    <div *ngIf="showZoom" class="zoom-result"
+      [style.background-image]="'url(' + selectedImage + ')'"
+      [style.background-position]="zoomPosition">
+    </div>
+
+    <div class="product-info"*ngIf="!showZoom">
+      <h1>{{ product.name }}</h1>
+      <div class="rating">
+        ⭐⭐⭐⭐☆ <span>(122 Reviews)</span>
+      </div>
+      <div class="price-box">
+        <span class="old-price"> ₹{{ product.old_price }}</span>
+        <span class="new-price"> ₹{{ product.new_price }}</span>
+      </div>
+      <p class="description">{{ product.description }}</p>
+
+      <div class="offer-box">
+        <h3>Available Offers</h3>
+        <p>✔ 10% Instant Discount</p>
+        <p>✔ Free Delivery</p>
+        <p>✔ 7 Days Return Policy</p>
+        <p>✔ Secure Payment</p>
+      </div>
+     <button class="cart-btn" (click)="addToCart()">Add To Cart</button>
+    </div>
+  </div>
+</div>
+
+<ng-template #loading>
+  <h2 style="text-align:center;margin-top:50px">Loading Product...</h2>
+</ng-template>

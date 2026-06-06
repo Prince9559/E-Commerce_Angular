@@ -11,16 +11,52 @@ import { CommonModule } from '@angular/common';
 export class Cart implements OnInit {
 
   cartItems: any[] = [];
+  cartCount = 0;
 
   ngOnInit(): void {
-    this.cartItems = JSON.parse(
-      localStorage.getItem('cart') || '[]'
+
+    this.loadCart();
+
+    window.addEventListener(
+      'cartUpdated',
+      () => {
+        this.loadCart();
+      }
     );
   }
 
+  loadCart() {
+
+    this.cartItems =
+      JSON.parse(
+        localStorage.getItem('cart') || '[]'
+      );
+
+    this.cartCount =
+      this.cartItems.length;
+  }
+
+  removeItem(index: number) {
+
+    this.cartItems.splice(index, 1);
+
+    localStorage.setItem(
+      'cart',
+      JSON.stringify(this.cartItems)
+    );
+
+    window.dispatchEvent(
+      new Event('cartUpdated')
+    );
+
+    this.loadCart();
+  }
+
   getTotal() {
+
     return this.cartItems.reduce(
-      (sum, item) => sum + item.new_price,
+      (sum, item) =>
+        sum + Number(item.new_price),
       0
     );
   }

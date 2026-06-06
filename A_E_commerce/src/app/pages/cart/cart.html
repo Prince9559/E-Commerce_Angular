@@ -1,27 +1,34 @@
 <div class="cart-container">
 
-  <h1 class="cart-title">My Cart 🛒</h1>
+  <h1 class="cart-title">
+    My Cart 🛒
+  </h1>
+
+  <div *ngIf="cartItems.length === 0" style="text-align:center;font-size:22px;margin-top:50px;">
+    Cart Is Empty 😔
+  </div>
 
   <div class="cart-grid">
 
-    <div class="cart-card" *ngFor="let item of cartItems">
-
-      <img
-        [src]="'https://prince9559.github.io/jsonproject/' + item.image"
-        [alt]="item.name">
+    <div class="cart-card" *ngFor="let item of cartItems;let i = index">
+      <img [src]="item.image" [alt]="item.name">
 
       <div class="card-content">
-
         <h3>{{ item.name }}</h3>
-
         <p>{{ item.description }}</p>
-
         <div>
-          <span class="price">₹{{ item.new_price }}</span>
-          <span class="old-price">₹{{ item.old_price }}</span>
+
+          <span class="price">
+            ₹{{ item.new_price }}
+          </span>
+
+          <span class="old-price">
+            ₹{{ item.old_price }}
+          </span>
+
         </div>
 
-        <button class="remove-btn">
+        <button class="remove-btn" (click)="removeItem(i)">
           Remove
         </button>
 
@@ -31,7 +38,7 @@
 
   </div>
 
-  <div class="total-box">
+  <div class="total-box" *ngIf="cartItems.length > 0">
     Total: ₹{{ getTotal() }}
   </div>
 

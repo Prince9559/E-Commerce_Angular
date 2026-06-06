@@ -4,7 +4,7 @@
 
 <div class="mobile-container">
 
-  <div class="mobile-card" *ngFor="let item of products">
+    <div class="mobile-card" *ngFor="let item of products" [routerLink]="['/product','mobiles',item.id]">
 
     <div class="mobile-img-box">
       <img [src]="item.image" [alt]="item.name">

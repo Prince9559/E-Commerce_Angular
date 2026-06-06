@@ -122,13 +122,14 @@
 
 <div class="product-container">
 
-  <div class="product-card" *ngFor="let item of all_item">
+  <div class="product-card" *ngFor="let item of all_item" [routerLink]="['/product','all_item',item.id]">
 
     <div class="img-box">
       <img [src]="item.image" [alt]="item.name">
     </div>
 
     <div class="content">
+
       <h3>{{ item.name }}</h3>
 
       <p class="desc">
@@ -136,12 +137,15 @@
       </p>
 
       <div class="price-section">
+
         <span class="new-price">
           ₹{{ item.new_price }}
         </span>
+
         <span class="old-price">
           ₹{{ item.old_price }}
         </span>
+
       </div>
 
     </div>

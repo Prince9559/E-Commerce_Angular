@@ -1,10 +1,11 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-mobiles',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,RouterLink],
   templateUrl: './mobiles.html',
   styleUrls: ['./mobiles.css']
 })
@@ -35,3 +36,4 @@ export class Mobiles implements OnInit {
 
   }
 }
+

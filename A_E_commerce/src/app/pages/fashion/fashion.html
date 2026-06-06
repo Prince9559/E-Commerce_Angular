@@ -1,16 +1,13 @@
 <h2 style="text-align:center; margin:20px 0;">
-   Fashion Categories
+  Fashion Categories
 </h2>
 
 <div class="product-container">
 
-  <div class="product-card" *ngFor="let item of products">
+  <div class="product-card" *ngFor="let item of products" [routerLink]="['/product','fashion',item.id]">
 
     <div class="img-box">
-      <img
-        [src]="item.image"
-        [alt]="item.name"
-      />
+      <img [src]="item.image"[alt]="item.name"/>
     </div>
 
     <div class="content">

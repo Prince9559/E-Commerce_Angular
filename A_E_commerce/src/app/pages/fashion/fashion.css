@@ -127,3 +127,7 @@
         grid-template-columns:1fr;
     }
 }
+
+.product-card{
+    cursor:pointer;
+}

@@ -13,6 +13,7 @@ import { Books } from './pages/books/books';
 import { Cart } from './pages/cart/cart';
 import { ForYou } from './pages/for-you/for-you';
 import { Profile } from './pages/profile/profile';
+import { ProductDetails } from './components/product-details/product-details';
 
 export const routes: Routes = [
 
@@ -29,5 +30,6 @@ export const routes: Routes = [
   { path: 'sports', component: Sports },
   { path: 'books', component: Books },
   { path: 'cart', component: Cart },
+  {path: 'product/:category/:id',component: ProductDetails}
 
 ];

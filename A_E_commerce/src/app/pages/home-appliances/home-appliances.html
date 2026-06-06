@@ -4,7 +4,7 @@
 
 <div class="homeAppliances-container">
 
-  <div class="homeAppliances-card" *ngFor="let item of products">
+<div class="homeAppliances-card" *ngFor="let item of products" [routerLink]="['/product','home-appliances',item.id]">
 
     <div class="homeAppliances-img-box">
       <img [src]="item.image" [alt]="item.name">

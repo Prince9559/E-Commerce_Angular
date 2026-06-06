@@ -1,27 +1,26 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-fashion',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './fashion.html',
   styleUrls: ['./fashion.css']
 })
-
 export class Fashion implements OnInit {
 
   products: any[] = [];
 
   constructor(private cdr: ChangeDetectorRef) {}
-  ngOnInit(): void 
-  {
+
+  ngOnInit(): void {
     fetch('https://prince9559.github.io/jsonproject/Fashion.json')
       .then(response => response.json())
       .then(data => {
         this.products = data;
         this.cdr.detectChanges();
-        console.log(this.products);
       })
       .catch(error => console.log(error));
   }

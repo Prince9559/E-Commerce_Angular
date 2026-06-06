@@ -89,3 +89,7 @@
         grid-template-columns:1fr;
     }
 }
+
+.food-card{
+    cursor:pointer;
+}

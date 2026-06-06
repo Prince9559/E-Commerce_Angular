@@ -4,7 +4,8 @@
 
 <div class="sport-container">
 
-  <div class="sport-card" *ngFor="let item of products">
+    <div class="sport-card" *ngFor="let item of products" [routerLink]="['/product','sports',item.id]">
+
 
     <div class="sport-img-box">
       <img [src]="item.image" [alt]="item.name">

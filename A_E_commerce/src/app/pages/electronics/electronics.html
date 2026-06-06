@@ -4,9 +4,9 @@
 
 <div class="electronics-container">
 
-  <div class="electronics-card" *ngFor="let item of products">
-
-    <div class="electronics-img-box">
+<div class="electronics-card" *ngFor="let item of products" [routerLink]="['/product','electronics',item.id]">
+    
+  <div class="electronics-img-box">
       <img [src]="item.image" [alt]="item.name">
     </div>
 

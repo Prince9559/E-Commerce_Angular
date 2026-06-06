@@ -2,29 +2,26 @@
    Beauty Categories
 </h2>
 
-<div class="mobile-container">
+<div class="beauty-container">
 
-  <div class="mobile-card" *ngFor="let item of products">
-
-    <div class="mobile-img-box">
+    <div class="beauty-card" *ngFor="let item of products" [routerLink]="['/product','beauty',item.id]">
+    <div class="beauty-img-box">
       <img [src]="item.image" [alt]="item.name">
     </div>
 
-    <div class="mobile-content">
-
+    <div class="beauty-content">
       <h3>{{ item.name }}</h3>
 
-      <p class="mobile-desc">
+      <p class="beauty-desc">
         {{ item.description }}
       </p>
 
-      <div class="mobile-price-section">
-
-        <span class="mobile-new-price">
+      <div class="beauty-price-section">
+        <span class="beauty-new-price">
           ₹{{ item.new_price }}
         </span>
 
-        <span class="mobile-old-price">
+        <span class="beauty-old-price">
           ₹{{ item.old_price }}
         </span>
 

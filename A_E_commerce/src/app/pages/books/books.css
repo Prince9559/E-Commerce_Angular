@@ -14,11 +14,14 @@
     transition:0.3s ease;
 }
 
+.book-card{
+    cursor:pointer;
+}
+
 .book-card:hover{
     transform:translateY(-6px);
     box-shadow:0 8px 25px rgba(0,0,0,0.15);
 }
-
 .book-img-box{
     width:100%;
     height:250px;

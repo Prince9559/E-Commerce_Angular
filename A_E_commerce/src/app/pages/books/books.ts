@@ -1,10 +1,11 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-mobiles',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,RouterLink],
   templateUrl: './books.html',
   styleUrl: './books.css',
 })
@@ -13,7 +14,6 @@ export class Books implements OnInit {
   products: any[] = [];
 
   constructor(private cdr: ChangeDetectorRef) {}
-
   ngOnInit(): void {
 
     fetch('https://prince9559.github.io/jsonproject/Book.json')

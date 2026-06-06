@@ -14,6 +14,10 @@
     transition:0.3s ease;
 }
 
+.homeAppliances-card{
+    cursor:pointer;
+}
+
 .homeAppliances-card:hover{
     transform:translateY(-6px);
     box-shadow:0 8px 25px rgba(0,0,0,0.15);
