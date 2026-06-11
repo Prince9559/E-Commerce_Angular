@@ -13,11 +13,15 @@ import { Books } from './pages/books/books';
 import { Cart } from './pages/cart/cart';
 import { ForYou } from './pages/for-you/for-you';
 import { Profile } from './pages/profile/profile';
+import { Login } from './pages/login/login';
+import { Logout } from './pages/logout/logout';
 import { ProductDetails } from './components/product-details/product-details';
 
 export const routes: Routes = [
 
-  {path:'',component:ForYou},
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: 'login', component: Login },
+  { path: 'for-you', component: ForYou },
   { path: 'home', component: Home },
   { path: 'fashion', component: Fashion },
   { path: 'mobiles', component: Mobiles },
@@ -25,11 +29,12 @@ export const routes: Routes = [
   { path: 'electronics', component: Electronics },
   { path: 'home-appliances', component: HomeAppliances },
   { path: 'toys', component: Toys },
-  { path: 'profile', component: Profile},
+  { path: 'profile', component: Profile },
   { path: 'food', component: Food },
   { path: 'sports', component: Sports },
   { path: 'books', component: Books },
   { path: 'cart', component: Cart },
-  {path: 'product/:category/:id',component: ProductDetails}
+  {path : 'logout',component: Logout},
+  { path: 'product/:category/:id', component: ProductDetails }
 
 ];

@@ -1,79 +1,80 @@
 <div class="navbar">
+  <div class="logo">Shop</div>
+  <div class="search-bar">
+    <input type="text" placeholder="Search for Products, Brands and More" />
+  </div>
 
-    <div class="logo">Shop</div>
-    <div class="search-bar">
-    <input type="text" placeholder="Search for Products, Brands and More">
-    </div>
+  <div class="nav-right">
+    <a routerLink="/profile">
+      <span class="material-icons">person</span>
+      <span>Profile</span>
+    </a>
 
-    <div class="nav-right">
+    <a routerLink="/cart" class="cart-link">
+      <span class="material-icons">shopping_cart</span>
+      <span>Cart</span>
+      <span class="cart-count">{{ cartCount }}</span>
+    </a>
 
-        <a routerLink="/profile">
-            <span class="material-icons">person</span>
-            <span>Profile</span>
-        </a>
+    <button class="logout-btn" (click)="logout()">
+      <span class="material-icons">logout</span>
+      <span>Logout</span>
+    </button>
 
-        <a routerLink="/cart" class="cart-link">
-        <span class="material-icons">shopping_cart</span>
-        <span>Cart</span>
-        <span class="cart-count">{{ cartCount }}</span>
-        </a>
-
-    </div>
-
+    
+  </div>
 </div>
 
 <div class="category-menu">
+  <a routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">
+    <span class="material-icons menu-icon">home</span>
+    <span>For You</span>
+  </a>
 
-    <a routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">
-        <span class="material-icons menu-icon">home</span>
-        <span>For You</span>
-    </a>
+  <a routerLink="/fashion" routerLinkActive="active-link">
+    <span class="material-icons menu-icon">checkroom</span>
+    <span>Fashion</span>
+  </a>
 
-    <a routerLink="/fashion" routerLinkActive="active-link">
-        <span class="material-icons menu-icon">checkroom</span>
-        <span>Fashion</span>
-    </a>
+  <a routerLink="/mobiles" routerLinkActive="active-link">
+    <span class="material-icons menu-icon">smartphone</span>
+    <span>Mobiles</span>
+  </a>
 
-    <a routerLink="/mobiles" routerLinkActive="active-link">
-        <span class="material-icons menu-icon">smartphone</span>
-        <span>Mobiles</span>
-    </a>
+  <a routerLink="/beauty" routerLinkActive="active-link">
+    <span class="material-icons menu-icon">face</span>
+    <span>Beauty</span>
+  </a>
 
-    <a routerLink="/beauty" routerLinkActive="active-link">
-        <span class="material-icons menu-icon">face</span>
-        <span>Beauty</span>
-    </a>
+  <a routerLink="/electronics" routerLinkActive="active-link">
+    <span class="material-icons menu-icon">devices</span>
+    <span>Electronics</span>
+  </a>
 
-    <a routerLink="/electronics" routerLinkActive="active-link">
-        <span class="material-icons menu-icon">devices</span>
-        <span>Electronics</span>
-    </a>
+  <a routerLink="/home-appliances" routerLinkActive="active-link">
+    <span class="material-icons menu-icon">kitchen</span>
+    <span>Home Appliances</span>
+  </a>
 
-    <a routerLink="/home-appliances" routerLinkActive="active-link">
-        <span class="material-icons menu-icon">kitchen</span>
-        <span>Home Appliances</span>
-    </a>
+  <a routerLink="/toys" routerLinkActive="active-link">
+    <span class="material-icons menu-icon">toys</span>
+    <span>Toys</span>
+  </a>
 
-    <a routerLink="/toys" routerLinkActive="active-link">
-        <span class="material-icons menu-icon">toys</span>
-        <span>Toys</span>
-    </a>
+  <a routerLink="/food" routerLinkActive="active-link">
+    <span class="material-icons menu-icon">restaurant</span>
+    <span>Food</span>
+  </a>
 
-    <a routerLink="/food" routerLinkActive="active-link">
-        <span class="material-icons menu-icon">restaurant</span>
-        <span>Food</span>
-    </a>
+  <a routerLink="/sports" routerLinkActive="active-link">
+    <span class="material-icons menu-icon">sports_soccer</span>
+    <span>Sports</span>
+  </a>
 
-    <a routerLink="/sports" routerLinkActive="active-link">
-        <span class="material-icons menu-icon">sports_soccer</span>
-        <span>Sports</span>
-    </a>
-
-    <a routerLink="/books" routerLinkActive="active-link">
-        <span class="material-icons menu-icon">menu_book</span>
-        <span>Books</span>
-    </a>
-
+  <a routerLink="/books" routerLinkActive="active-link">
+    <span class="material-icons menu-icon">menu_book</span>
+    <span>Books</span>
+  </a>
 </div>
 
-<hr>
+<hr />
