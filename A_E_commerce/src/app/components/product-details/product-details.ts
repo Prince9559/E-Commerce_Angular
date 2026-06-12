@@ -42,7 +42,9 @@ export class ProductDetails implements OnInit {
       food: 'Food.json',
       sports: 'Sport.json',
       books: 'Book.json',
-      all_item:'All_item.json'
+      all_item:'All_item.json',
+      show:'show.json',
+      you:'You.json'
     };
 
     const fileName = fileMap[category || ''];

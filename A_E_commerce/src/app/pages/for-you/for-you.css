@@ -311,3 +311,19 @@ body{
   font-size: 22px;
   cursor: pointer;
 }
+
+.selection-card{
+    cursor:pointer;
+}
+.slider-card{
+    cursor:pointer;
+}
+
+.selection-card{
+    transition: all 0.4s ease;
+}
+
+.selection-card:hover{
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
