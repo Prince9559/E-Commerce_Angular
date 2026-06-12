@@ -1,6 +1,7 @@
 import {Component,OnInit,ChangeDetectorRef} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-product-details',
@@ -22,14 +23,14 @@ export class ProductDetails implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private cdr: ChangeDetectorRef
+    private cdr: ChangeDetectorRef,
+    private toastr: ToastrService
   ) {}
 
   ngOnInit(): void {
 
     const category =
       this.route.snapshot.paramMap.get('category');
-
     const id =Number(this.route.snapshot.paramMap.get('id'));
 
     const fileMap: any = {
@@ -42,9 +43,9 @@ export class ProductDetails implements OnInit {
       food: 'Food.json',
       sports: 'Sport.json',
       books: 'Book.json',
-      all_item:'All_item.json',
-      show:'show.json',
-      you:'You.json'
+      all_item: 'All_item.json',
+      show: 'show.json',
+      you: 'You.json'
     };
 
     const fileName = fileMap[category || ''];
@@ -57,12 +58,8 @@ export class ProductDetails implements OnInit {
       .then(res => res.json())
       .then(data => {
 
-        this.product =
-          data.find((item: any) => item.id === id);
-
-        this.selectedImage =
-          this.product?.image;
-
+        this.product =data.find((item: any) => item.id === id);
+        this.selectedImage =this.product?.image;
         this.cdr.detectChanges();
       });
   }
@@ -73,28 +70,14 @@ export class ProductDetails implements OnInit {
 
   zoomImage(event: MouseEvent) {
 
-    const img =
-      event.target as HTMLImageElement;
-
-    const rect =
-      img.getBoundingClientRect();
-
-    const x =
-      ((event.clientX - rect.left) /
-      rect.width) * 100;
-
-    const y =
-      ((event.clientY - rect.top) /
-      rect.height) * 100;
+    const img =event.target as HTMLImageElement;
+    const rect =img.getBoundingClientRect();
+    const x =((event.clientX - rect.left) /rect.width) * 100;
+    const y =((event.clientY - rect.top) /rect.height) * 100;
 
     this.zoomPosition = `${x}% ${y}%`;
-
-    this.lensX =
-      event.clientX - rect.left - 60;
-
-    this.lensY =
-      event.clientY - rect.top - 60;
-
+    this.lensX =event.clientX - rect.left - 60;
+    this.lensY =event.clientY - rect.top - 60;
     this.showZoom = true;
   }
 
@@ -104,21 +87,24 @@ export class ProductDetails implements OnInit {
 
   addToCart() {
 
-  let cart = JSON.parse(
-    localStorage.getItem('cart') || '[]'
-  );
+    let cart = JSON.parse(
+      localStorage.getItem('cart') || '[]'
+    );
 
-  cart.push(this.product);
+    cart.push(this.product);
 
-  localStorage.setItem(
-    'cart',
-    JSON.stringify(cart)
-  );
+    localStorage.setItem(
+      'cart',
+      JSON.stringify(cart)
+    );
 
-  window.dispatchEvent(
-    new Event('cartUpdated')
-  );
+    window.dispatchEvent(
+      new Event('cartUpdated')
+    );
 
-  alert('Product Added To Cart');
-}
+    this.toastr.success(
+      'Product Added To Cart',
+      'Success'
+    );
+  }
 }
