@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,12 +7,18 @@ import { Router } from '@angular/router';
   templateUrl: './login.html',
   styleUrl: './login.css',
 })
-export class Login {
+export class Login implements OnInit {
 
   constructor(private router: Router) {}
 
+  ngOnInit() {
+    if (localStorage.getItem('isLoggedIn') === 'true') {
+      this.router.navigate(['/for-you']);
+    }
+  }
+
   login() {
-  localStorage.setItem('isLoggedIn', 'true');
-  this.router.navigateByUrl('/for-you', { replaceUrl: true });
-}
+    localStorage.setItem('isLoggedIn', 'true');
+    this.router.navigate(['/for-you']);
+  }
 }

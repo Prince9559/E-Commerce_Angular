@@ -14,7 +14,7 @@ import { Cart } from './pages/cart/cart';
 import { ForYou } from './pages/for-you/for-you';
 import { Profile } from './pages/profile/profile';
 import { Login } from './pages/login/login';
-import { Logout } from './pages/logout/logout';
+// import { Logout } from './pages/logout/logout';
 import { ProductDetails } from './components/product-details/product-details';
 
 export const routes: Routes = [
@@ -34,7 +34,7 @@ export const routes: Routes = [
   { path: 'sports', component: Sports },
   { path: 'books', component: Books },
   { path: 'cart', component: Cart },
-  {path : 'logout',component: Logout},
+  // {path : 'logout',component: Logout},
   { path: 'product/:category/:id', component: ProductDetails }
 
 ];
