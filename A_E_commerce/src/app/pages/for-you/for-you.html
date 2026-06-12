@@ -85,7 +85,6 @@
 
   <div class="slider" #slider>
 
-    <!-- <div class="slider-card" *ngFor="let item of products"> -->
       <div class="slider-card" *ngFor="let item of products" [routerLink]="['/product','you',item.id]"> 
       <img [src]="item.image" [alt]="item.name">
       <p class="slider-name">{{ item.name }}</p>
